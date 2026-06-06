@@ -1,0 +1,23 @@
+{
+  "name": "vendorbridge-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "seed": "node -e \"import('dotenv/config');import('./src/db.js').then(async m=>{await m.connectDb(process.env.DATABASE_URL);await import('./src/seed.js').then(s=>s.seedDatabase());process.exit(0);})\""
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.16",
+    "pdfkit": "^0.15.1",
+    "pg": "^8.13.1"
+  }
+}

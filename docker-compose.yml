@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: vendorbridge-db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: vendorbridge
+    volumes:
+      - vendorbridge_pg:/var/lib/postgresql/data
+
+volumes:
+  vendorbridge_pg:

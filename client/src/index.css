@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-dim disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply rounded-lg border border-surface-600 bg-surface-800 px-4 py-2 text-sm font-medium text-slate-200 transition hover:bg-surface-700 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-danger {
+    @apply rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .input-field {
+    @apply w-full rounded-lg border border-surface-600 bg-surface-900 px-3 py-2 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-brand focus:ring-1 focus:ring-brand;
+  }
+  .card {
+    @apply rounded-xl border border-surface-700 bg-surface-800 p-5 shadow-sm;
+  }
+  .table-wrap {
+    @apply overflow-x-auto rounded-xl border border-surface-700;
+  }
+  .data-table {
+    @apply w-full text-left text-sm;
+  }
+  .data-table th {
+    @apply border-b border-surface-700 bg-surface-900/80 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-400;
+  }
+  .data-table td {
+    @apply border-b border-surface-700/60 px-4 py-3 text-slate-200;
+  }
+  .data-table tbody tr:hover {
+    @apply bg-surface-700/30;
+  }
+}
